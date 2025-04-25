@@ -1,0 +1,16 @@
+# Deno specific files
+.env
+.vscode/
+.idea/
+.DS_Store
+
+# Build output
+dist/
+
+# Logs
+logs
+*.log
+
+# Local development files
+tmp/
+.cache/
