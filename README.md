@@ -30,13 +30,11 @@ import { Grid, Arc } from "./path/to/monome-deno/src/mod.ts";
 
 ### Option 2: Using JSR (recommended)
 
-Once this package is published to the Deno JSR registry, you can install it with:
+This package is published to the Deno JSR registry, you can install it with:
 
 ```typescript
-import serialosc, { Grid, Arc } from "jsr:@username/monome-deno";
+import serialosc, { Grid, Arc } from "jsr:@capogreco/monome-deno";
 ```
-
-Replace `@username` with the actual username used to publish the package.
 
 ## Usage
 
