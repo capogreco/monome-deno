@@ -1,0 +1,16 @@
+{
+  "version": "4",
+  "specifiers": {
+    "jsr:@denosaurs/event@*": "2.0.2"
+  },
+  "jsr": {
+    "@denosaurs/event@2.0.2": {
+      "integrity": "3310ba1a9e94dd60ccb09c6084fc818cc1cd50e543c56ef0c6199f1b89073392"
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@denosaurs/event@1"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "name": "monome-deno",
+  "version": "0.1.0",
+  "exports": "./src/mod.ts",
+  "imports": {
+    "@denosaurs/event": "jsr:@denosaurs/event@^1.0.0"
+  },
+  "compilerOptions": {
+    "strict": true,
+    "lib": ["deno.window", "deno.ns", "deno.unstable"]
+  },
+  "fmt": {
+    "include": ["src/"],
+    "indentWidth": 2,
+    "lineWidth": 80,
+    "semiColons": true,
+    "singleQuote": false
+  },
+  "lint": {
+    "include": ["src/"]
+  },
+  "tasks": {
+    "check": "deno check src/mod.ts",
+    "scan": "deno run --allow-net --unstable-net src/examples/scan.ts",
+    "grid-test": "deno run --allow-net --unstable-net src/examples/grid_test.ts",
+    "test-import": "deno run src/examples/test_import.ts",
+    "check-device": "deno run --allow-net --unstable-net src/examples/check_device.ts"
+  }
+}
