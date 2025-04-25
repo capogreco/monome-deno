@@ -4,7 +4,7 @@
  */
 
 // import { EventEmitter } from "jsr:@std/node/events";
-import { EventEmitter } from "jsr:@denosaurs/event";
+import { EventEmitter } from "jsr:@denosaurs/event@^2.0.2";
 import { OscSender, OscReceiver } from "./osc.ts";
 
 /**
@@ -29,7 +29,12 @@ export interface DeviceOptions {
 /**
  * A Device represents either an arc or a grid connected to serialosc
  */
-export class Device extends EventEmitter {
+export class Device extends EventEmitter<{
+  initialized: [];
+  connected: [];
+  disconnected: [];
+  [key: string]: any[];
+}> {
   /**
    * OSC communication
    */

@@ -4,7 +4,7 @@
  */
 
 // import { EventEmitter } from "jsr:@std/node/events";
-import { EventEmitter } from "jsr:@denosaurs/event";
+import { EventEmitter } from "jsr:@denosaurs/event@^2.0.2";
 import { OscSender, OscReceiver } from "./osc.ts";
 import { Grid } from "./grid.ts";
 import { Arc } from "./arc.ts";
@@ -41,7 +41,11 @@ export interface DeviceInfo {
  * serialosc running either on the local computer
  * or another computer on the network.
  */
-export class SerialOSC extends EventEmitter {
+export class SerialOSC extends EventEmitter<{
+  'device:add': [DeviceInfo];
+  'device:remove': [DeviceInfo];
+  [key: string]: any[];
+}> {
   /**
    * An array of all devices that have been seen
    */
@@ -86,6 +90,13 @@ export class SerialOSC extends EventEmitter {
    * Automatically start / initialize devices when discovered
    */
   startDevices: boolean = true;
+  
+  /**
+   * Create a new SerialOSC instance
+   */
+  constructor() {
+    super();
+  }
 
   /**
    * Begin listening for serialosc messages on host/port
@@ -275,5 +286,8 @@ export class SerialOSC extends EventEmitter {
   }
 }
 
-// Export a singleton instance
-export default new SerialOSC();
+// Create singleton instance
+const serialOSCInstance = new SerialOSC();
+
+// Export the singleton with an explicit type
+export default serialOSCInstance as SerialOSC;

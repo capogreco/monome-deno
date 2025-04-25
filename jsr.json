@@ -1,0 +1,8 @@
+{
+  "name": "@capogreco/monome-deno",
+  "version": "0.1.0",
+  "exports": "./src/mod.ts",
+  "description": "A Deno library for communicating with Monome devices (Grid and Arc) via serialosc",
+  "repository": "https://github.com/capogreco/monome-deno",
+  "license": "MIT"
+}
